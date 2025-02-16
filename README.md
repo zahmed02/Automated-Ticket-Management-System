@@ -1,32 +1,63 @@
 ## Overview
-A **C++ program** designed to manage **service requests (tickets), agents, and ticket resolutions** efficiently. It provides a **command-line interface (CLI)** for **administrators** and **users** to create, assign, resolve, and sort tickets while keeping track of **pending and completed tasks**.
+The Automated Ticket Management System (ATMS) is a ticketing and agent management system designed to handle service requests efficiently. Provides functionalities for managing tickets, assigning them to agents, tracking resolutions, and implementing sorting and searching mechanisms. Supports interactive user and administrator menus for handling diverse operations.
 
-## Features
+## Features & Requirements
 
-### 🚀 Service Request (Ticket) Management:
-- ✅ Create tickets with a **unique ticket holder ID**, **priority level**, **request statement**, and **timestamp**.
-- 📜 Display **open** and **closed** tickets.
-- 🔄 Assign tickets to available agents based on **workload**.
-- 🔍 Sort tickets using various **sorting algorithms**:
-  - Bubble Sort
-  - Insertion Sort
-  - Selection Sort
-  - Merge Sort
-  - Quick Sort
-- 📝 Store resolved tickets in a **resolution log stack**.
-- 📌 Maintain a queue for **pending tickets**.
+### 1. Service Request (Ticket) Management
+- Create, view, and manage service tickets.
+- Tickets include a unique ID, priority level, request statement, and timestamps.
+- Tickets can be opened, closed, and searched by ID or name.
+- Sorting tickets based on priority, creation time, or customer name.
 
-### 👥 Agent Management:
-- 🏢 Agents are classified into:
-  - **IT**
-  - **Admin**
-  - **Accounts**
-  - **Academics**
-- 🎯 Each agent can handle up to **5 tickets**.
-- 🔄 Assign tickets dynamically based on **availability and workload**.
-- 🔍 Sort agents based on the **number of assigned tickets**.
+### 2. Agent Management
+- Agents are responsible for handling service tickets.
+- Agents are categorized into different departments: IT, Admin, Accounts, and Academics.
+- An agent can handle up to 5 tickets at a time.
+- Agents are assigned tickets based on workload and ticket type.
+- Sorting of agents based on the number of tickets assigned.
 
-### ⚙️ Configuration Settings:
-- 🔧 **Sorting algorithms** for **large and small datasets** can be configured.
-- 📊 **Threshold** for selecting sorting algorithms can be **modified**.
-- 📂 Configuration is stored in a file (**ONESTOPMS.conf**) and can be **updated via the interface**.
+### 3. Ticket Resolution & Pending Tickets
+- A stack-based system to maintain ticket resolution logs.
+- A queue-based system to manage pending tickets based on priority.
+- Automatically assigns tickets to available agents.
+
+### 4. Configuration Management
+- Customizable sorting algorithm configuration for small and large datasets.
+- Configurations are stored and loaded from a file (`ONESTOPMS.conf`).
+
+## Data Structures & Algorithms
+
+### Data Structures Used:
+- **Linked List**: Used for managing tickets (`TicketLinkedList`).
+- **Dynamic Array**: Used for managing agents (`AgentDynamicArray`).
+- **Stack**: Used for resolved ticket logs (`ResolutionLogisticsStack`).
+- **Queue**: Used for pending ticket management (`PendingTicketsQueue`).
+
+### Sorting Algorithms Implemented:
+- Bubble Sort
+- Insertion Sort
+- Selection Sort
+- Merge Sort
+- Quick Sort
+
+## Main Menu Options
+
+### Administrator Menu:
+- Add and manage agents.
+- Assign tickets to agents.
+- Resolve tickets and track logs.
+- Configure system settings (sorting algorithms, thresholds).
+- View all tickets, queues, and resolved tickets.
+
+### User Menu:
+- Submit a new ticket.
+- Search tickets by ID or name.
+- View pending tickets.
+
+### Sorting & Searching:
+- Tickets and agents can be sorted using different sorting algorithms.
+- Search functionality allows quick retrieval of tickets.
+
+### Configuration Management:
+- The system allows dynamic sorting algorithm selection based on dataset size.
+- Configurations are stored in `ONESTOPMS.conf` and can be updated through the admin menu.
